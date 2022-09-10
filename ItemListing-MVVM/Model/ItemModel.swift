@@ -8,31 +8,22 @@
 import Foundation
 
 struct Item{
-    let itemId: Int
-    let itemName: String
+    let id: Int
+    let title: String
     let itemDesc: String
-    let itemImage: String
-    let itemPrice: Float
-    let itemRating: Float
+    let image: String
+    let price: Double
+    let rating: Rating
 }
 
-extension Item: Decodable{
+extension Item: Codable{
     enum CodingKeys: String, CodingKey{
-        case itemId = "id"
-        case itemName = "title"
+        case id, title, price, image, rating
         case itemDesc = "description"
-        case itemImage = "image"
-        case itemPrice = "price"
-        case itemRating = "rating"
     }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        itemId = try container.decode(Int.self, forKey: .itemId)
-        itemName =  try container.decode(String.self, forKey: .itemName)
-        itemDesc =  try container.decode(String.self, forKey: .itemDesc)
-        itemImage = try container.decode(String.self, forKey: .itemImage)
-        itemPrice = try container.decode(Float.self, forKey: .itemPrice)
-        itemRating = try container.decode(Float.self, forKey: .itemRating)
-    }
+}
+
+struct Rating: Codable{
+    let rate: Double
+    let count: Int
 }
