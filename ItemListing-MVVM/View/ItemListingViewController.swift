@@ -9,21 +9,35 @@ import UIKit
 
 class ItemListingViewController: UIViewController {
 
+    @IBOutlet weak var itemListingTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        itemListingTable.dataSource = self
+        itemListingTable.delegate = self
+        
+        itemListingTable.register(UINib.init(nibName: "ItemListingCell", bundle: nil), forCellReuseIdentifier: "ItemListingCell")
     }
     
 
-    /*
-    // MARK: - Navigation
+  
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = itemListingTable.dequeueReusableCell(withIdentifier: "ItemListingCell", for: indexPath)as! ItemListingCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 140
+    }
+    
 }
