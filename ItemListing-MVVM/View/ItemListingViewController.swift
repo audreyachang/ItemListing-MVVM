@@ -11,6 +11,9 @@ class ItemListingViewController: UIViewController {
 
     @IBOutlet weak var itemListingTable: UITableView!
     
+    var products: [Item] = []
+    let networkManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,18 @@ class ItemListingViewController: UIViewController {
         itemListingTable.delegate = self
         
         itemListingTable.register(UINib.init(nibName: "ItemListingCell", bundle: nil), forCellReuseIdentifier: "ItemListingCell")
+        
+        networkManager.getProducts { result in
+            switch result{
+            case .success(let products):
+                DispatchQueue.main.async {
+                    self.products = products
+                    self.itemListingTable.reloadData()
+                }
+            case.failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
 
@@ -28,7 +43,7 @@ class ItemListingViewController: UIViewController {
 extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

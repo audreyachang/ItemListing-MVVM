@@ -8,11 +8,22 @@
 import Foundation
 
 struct Item{
-    let itemId: Int
-    let itemName: String
+    let id: Int
+    let title: String
     let itemDesc: String
-    let itemImage: String
-    let itemPrice: Float
-    let itemRating: Float
+    let image: String
+    let price: Double
+    let rating: Rating
 }
 
+extension Item: Codable{
+    enum CodingKeys: String, CodingKey{
+        case id, title, price, image, rating
+        case itemDesc = "description"
+    }
+}
+
+struct Rating: Codable{
+    let rate: Double
+    let count: Int
+}
