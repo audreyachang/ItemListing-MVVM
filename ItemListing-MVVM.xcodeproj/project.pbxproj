@@ -22,6 +22,8 @@
 		6772DBDB28CC826B0088639E /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6772DBDA28CC826B0088639E /* ItemModel.swift */; };
 		6772DBDE28CC84790088639E /* ItemListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6772DBDC28CC84790088639E /* ItemListingCell.swift */; };
 		6772DBDF28CC84790088639E /* ItemListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6772DBDD28CC84790088639E /* ItemListingCell.xib */; };
+		6772DBE328CCACC90088639E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6772DBE228CCACC90088639E /* NetworkManager.swift */; };
+		67DD1FEE28CDF15300A0EAE6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DD1FED28CDF15300A0EAE6 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		6772DBDA28CC826B0088639E /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		6772DBDC28CC84790088639E /* ItemListingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListingCell.swift; sourceTree = "<group>"; };
 		6772DBDD28CC84790088639E /* ItemListingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemListingCell.xib; sourceTree = "<group>"; };
+		6772DBE228CCACC90088639E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		67DD1FED28CDF15300A0EAE6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				6772DBAA28CC81750088639E /* Assets.xcassets */,
 				6772DBAC28CC81750088639E /* LaunchScreen.storyboard */,
 				6772DBAF28CC81750088639E /* Info.plist */,
+				6772DBE228CCACC90088639E /* NetworkManager.swift */,
+				67DD1FED28CDF15300A0EAE6 /* DataManager.swift */,
 			);
 			path = "ItemListing-MVVM";
 			sourceTree = "<group>";
@@ -306,8 +312,10 @@
 				6772DBA628CC81730088639E /* ViewController.swift in Sources */,
 				6772DBDE28CC84790088639E /* ItemListingCell.swift in Sources */,
 				6772DBA228CC81730088639E /* AppDelegate.swift in Sources */,
+				6772DBE328CCACC90088639E /* NetworkManager.swift in Sources */,
 				6772DBD728CC82450088639E /* ItemListingViewController.swift in Sources */,
 				6772DBD928CC825D0088639E /* ItemListingViewModel.swift in Sources */,
+				67DD1FEE28CDF15300A0EAE6 /* DataManager.swift in Sources */,
 				6772DBA428CC81730088639E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
