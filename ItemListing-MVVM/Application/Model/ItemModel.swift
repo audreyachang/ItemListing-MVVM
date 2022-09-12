@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: Definition of Item and Rating data model
 struct Item{
     let id: Int
     let title: String
@@ -16,6 +17,12 @@ struct Item{
     let rating: Rating
 }
 
+struct Rating: Codable{
+    let rate: Double
+    let count: Int
+}
+
+//MARK: Added Coding Keys for Item data model to allow for mapping between data model and JSON Data
 extension Item: Codable{
     enum CodingKeys: String, CodingKey{
         case id, title, price, image, rating
@@ -23,7 +30,3 @@ extension Item: Codable{
     }
 }
 
-struct Rating: Codable{
-    let rate: Double
-    let count: Int
-}

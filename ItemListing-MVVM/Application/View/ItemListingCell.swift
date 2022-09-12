@@ -8,6 +8,7 @@
 import UIKit
 
 class ItemListingCell: UITableViewCell {
+    //MARK: Declaration of Outlets used in Table View Cell
     @IBOutlet weak var itemCellBackground: UIView!
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemPrice: UILabel!
@@ -17,6 +18,7 @@ class ItemListingCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //MARK: Call functions to modify appearance of UI Elements
         cellShadow()
         priceShadow()
     }
@@ -26,6 +28,7 @@ class ItemListingCell: UITableViewCell {
 
     }
     
+    //MARK: Add shadow to Cell UIView Background
     func cellShadow(){
         itemCellBackground.layer.cornerRadius = 10
         itemCellBackground.layer.shadowColor = UIColor.lightGray.cgColor
@@ -34,6 +37,7 @@ class ItemListingCell: UITableViewCell {
         itemCellBackground.layer.shadowRadius = 5
     }
     
+    //MARK: Add shadow to item price label
     func priceShadow(){
         itemPrice.shadowColor = .lightGray
         itemPrice.shadowOffset = .init(width: 0.8, height: 2)

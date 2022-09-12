@@ -9,6 +9,7 @@ import UIKit
 
 class ItemListingViewController: UIViewController {
 
+    //MARK: Oulet and variables declaration
     @IBOutlet weak var itemListingTable: UITableView!
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var emptyTitle: UILabel!
@@ -20,16 +21,19 @@ class ItemListingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //MARK: Setting initial text for Empty State components
         emptyLabel.text = ""
         emptyTitle.text = ""
         
+        //MARK: Set data source and delegate for Item Listing Table
         itemListingTable.dataSource = self
         itemListingTable.delegate = self
         
+        //MARK: Registering Itwm Listing Cell XIB & changing separator color in Table View
         itemListingTable.register(UINib.init(nibName: "ItemListingCell", bundle: nil), forCellReuseIdentifier: "ItemListingCell")
         itemListingTable.separatorColor = UIColor.clear
 
+        //MARK: Get Items from API and validation
         networkManager.getProducts { result in
             switch result{
             case .success(let products):
@@ -46,14 +50,15 @@ class ItemListingViewController: UIViewController {
             }
         }
         
-        
-        
     }
     
 }
 
+//MARK: Table View Functions
 extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
     
+    
+    //MARK: Set number of rows in table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if products.count != 0{
             return displayedProducts.count
@@ -62,6 +67,7 @@ extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    //MARK: Assign values to UI Elements in cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = itemListingTable.dequeueReusableCell(withIdentifier: "ItemListingCell", for: indexPath)as! ItemListingCell
         if products.count != 0{
@@ -76,10 +82,12 @@ extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
+    //MARK: Set cell height in table view
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 148
     }
     
+    //MARK: Pagination to allow Infinite srolling
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         if position > (itemListingTable.contentSize.height - 20 - scrollView.frame.height){
@@ -92,6 +100,7 @@ extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
+    //MARK: Add activity indicator spinner
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let sectionIndex = itemListingTable.numberOfSections - 1
         let lastRow = itemListingTable.numberOfRows(inSection: sectionIndex) - 1
@@ -109,6 +118,7 @@ extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
     
 }
 
+//MARK: Function to display empty state
 extension ItemListingViewController{
     func emptyData(){
         if products.isEmpty{

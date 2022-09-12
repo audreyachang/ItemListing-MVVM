@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: Added Item Placeholder
 struct ItemPlaceholder{
     let id, count: Int
     let title, itemDesc, image: String

@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: Function to fetch data from API
 class NetworkManager{
     public func getProducts(completion: @escaping(Result<[Item], Error>)->()){
         let itemURL = URL(string: "https://fakestoreapi.com/products")!

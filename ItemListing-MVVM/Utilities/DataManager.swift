@@ -7,6 +7,9 @@
 
 import UIKit
 
+//MARK: Functions used to further process data
+
+//MARK: Load Image function to get image from URL
 extension UIImageView{
     func loadImage(imageURL: URL){
         DispatchQueue.global().async { [weak self] in

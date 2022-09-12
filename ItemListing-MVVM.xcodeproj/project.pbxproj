@@ -115,9 +115,8 @@
 		6772DBA028CC81730088639E /* ItemListing-MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				6772DBD128CC81D30088639E /* View */,
-				6772DBD228CC81E50088639E /* Model */,
-				6772DBD328CC81EC0088639E /* ViewModel */,
+				6784FEB428CEDA10005BDAC5 /* Application */,
+				6784FEB328CEDA05005BDAC5 /* Utilities */,
 				6772DBA128CC81730088639E /* AppDelegate.swift */,
 				6772DBA328CC81730088639E /* SceneDelegate.swift */,
 				6772DBA528CC81730088639E /* ViewController.swift */,
@@ -125,8 +124,6 @@
 				6772DBAA28CC81750088639E /* Assets.xcassets */,
 				6772DBAC28CC81750088639E /* LaunchScreen.storyboard */,
 				6772DBAF28CC81750088639E /* Info.plist */,
-				6772DBE228CCACC90088639E /* NetworkManager.swift */,
-				67DD1FED28CDF15300A0EAE6 /* DataManager.swift */,
 			);
 			path = "ItemListing-MVVM";
 			sourceTree = "<group>";
@@ -173,6 +170,25 @@
 				6772DBD828CC825D0088639E /* ItemListingViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6784FEB328CEDA05005BDAC5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6772DBE228CCACC90088639E /* NetworkManager.swift */,
+				67DD1FED28CDF15300A0EAE6 /* DataManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6784FEB428CEDA10005BDAC5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6772DBD128CC81D30088639E /* View */,
+				6772DBD228CC81E50088639E /* Model */,
+				6772DBD328CC81EC0088639E /* ViewModel */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
