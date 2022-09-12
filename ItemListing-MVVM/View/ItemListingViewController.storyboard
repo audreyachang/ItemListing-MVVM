@@ -19,17 +19,39 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="JJ0-7w-gQm">
                                 <rect key="frame" x="0.0" y="64" width="414" height="798"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usk-MR-tb4">
+                                <rect key="frame" x="20" y="364" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xmz-MM-Zgh">
+                                <rect key="frame" x="20" y="441" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Xmz-MM-Zgh" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="35U-DY-AJB"/>
                             <constraint firstItem="JJ0-7w-gQm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="7WV-he-ege"/>
                             <constraint firstItem="JJ0-7w-gQm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MM0-Pt-tZc"/>
+                            <constraint firstItem="usk-MR-tb4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="TmK-bJ-Cgu"/>
+                            <constraint firstItem="Xmz-MM-Zgh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="WYQ-c9-r1x"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="usk-MR-tb4" secondAttribute="trailing" constant="20" id="Y24-J5-vHW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="JJ0-7w-gQm" secondAttribute="bottom" id="Y5r-Ut-zmN"/>
+                            <constraint firstItem="usk-MR-tb4" firstAttribute="bottom" secondItem="Xmz-MM-Zgh" secondAttribute="bottom" constant="-80" id="ed0-Iq-pAU"/>
+                            <constraint firstItem="Xmz-MM-Zgh" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="izo-X7-hoc"/>
+                            <constraint firstItem="usk-MR-tb4" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="s4L-CD-Zb7"/>
                             <constraint firstItem="JJ0-7w-gQm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="uHe-8Q-6FF"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xmz-MM-Zgh" secondAttribute="trailing" constant="20" id="ytj-mC-fCd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyLabel" destination="Xmz-MM-Zgh" id="H7U-YF-804"/>
+                        <outlet property="emptyTitle" destination="usk-MR-tb4" id="vRO-16-8E9"/>
                         <outlet property="itemListingTable" destination="JJ0-7w-gQm" id="seX-CE-UrL"/>
                     </connections>
                 </viewController>
