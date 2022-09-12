@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,8 +37,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Xmz-MM-Zgh" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="35U-DY-AJB"/>
-                            <constraint firstItem="JJ0-7w-gQm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="7WV-he-ege"/>
-                            <constraint firstItem="JJ0-7w-gQm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MM0-Pt-tZc"/>
+                            <constraint firstItem="JJ0-7w-gQm" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="5HH-QS-h2d"/>
+                            <constraint firstItem="JJ0-7w-gQm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Bs5-CO-3qX"/>
+                            <constraint firstItem="JJ0-7w-gQm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MVK-aR-kTv"/>
                             <constraint firstItem="usk-MR-tb4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="TmK-bJ-Cgu"/>
                             <constraint firstItem="Xmz-MM-Zgh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="WYQ-c9-r1x"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="usk-MR-tb4" secondAttribute="trailing" constant="20" id="Y24-J5-vHW"/>
@@ -45,7 +47,7 @@
                             <constraint firstItem="usk-MR-tb4" firstAttribute="bottom" secondItem="Xmz-MM-Zgh" secondAttribute="bottom" constant="-80" id="ed0-Iq-pAU"/>
                             <constraint firstItem="Xmz-MM-Zgh" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="izo-X7-hoc"/>
                             <constraint firstItem="usk-MR-tb4" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="s4L-CD-Zb7"/>
-                            <constraint firstItem="JJ0-7w-gQm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="uHe-8Q-6FF"/>
+                            <constraint firstItem="JJ0-7w-gQm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wWi-rT-PEy"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xmz-MM-Zgh" secondAttribute="trailing" constant="20" id="ytj-mC-fCd"/>
                         </constraints>
                     </view>
