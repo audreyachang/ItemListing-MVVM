@@ -8,7 +8,7 @@
 import UIKit
 
 class ItemListingCell: UITableViewCell {
-
+    @IBOutlet weak var itemCellBackground: UIView!
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemPrice: UILabel!
     @IBOutlet weak var itemName: UILabel!
@@ -17,13 +17,25 @@ class ItemListingCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        cellShadow()
+        priceShadow()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
+    func cellShadow(){
+        itemCellBackground.layer.cornerRadius = 10
+        itemCellBackground.layer.shadowColor = UIColor.lightGray.cgColor
+        itemCellBackground.layer.shadowOffset = .zero
+        itemCellBackground.layer.shadowOpacity = 1
+        itemCellBackground.layer.shadowRadius = 5
+    }
+    
+    func priceShadow(){
+        itemPrice.shadowColor = .lightGray
+        itemPrice.shadowOffset = .init(width: 0.8, height: 2)
+    }
 }
