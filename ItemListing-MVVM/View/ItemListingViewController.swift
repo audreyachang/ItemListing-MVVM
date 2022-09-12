@@ -22,6 +22,7 @@ class ItemListingViewController: UIViewController {
         
         itemListingTable.register(UINib.init(nibName: "ItemListingCell", bundle: nil), forCellReuseIdentifier: "ItemListingCell")
         itemListingTable.separatorColor = UIColor.clear
+        
         networkManager.getProducts { result in
             switch result{
             case .success(let products):
@@ -36,11 +37,9 @@ class ItemListingViewController: UIViewController {
                 print(error.localizedDescription)
             }
         }
+        
     }
     
-
-  
-
 }
 
 extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
@@ -71,6 +70,21 @@ extension ItemListingViewController: UITableViewDelegate, UITableViewDataSource{
                     displayedProducts.append(products[i])
                     self.itemListingTable.reloadData()
                 }
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let sectionIndex = itemListingTable.numberOfSections - 1
+        let lastRow = itemListingTable.numberOfRows(inSection: sectionIndex) - 1
+        if indexPath.section == sectionIndex && indexPath.row == lastRow {
+            let loadSpinner = UIActivityIndicatorView(style: .medium)
+            if displayedProducts.count < 20 {
+                loadSpinner.frame = CGRect(x: 0.0, y: 0.0, width: itemListingTable.frame.width, height: 40)
+                loadSpinner.startAnimating()
+                itemListingTable.tableFooterView = loadSpinner
+            }else{
+                itemListingTable.tableFooterView = .none
             }
         }
     }
